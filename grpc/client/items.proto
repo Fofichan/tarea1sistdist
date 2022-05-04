@@ -1,0 +1,22 @@
+syntax = 'proto3';
+
+
+service ItemServices {
+    rpc getItem (GetItemsRequest) returns (Response) {}
+}
+
+message GetItemsRequest {
+    string Name = 1;
+}
+
+message Response {
+    repeated Item items = 1;
+}
+
+message Item {
+    int32 Id = 1;
+    string Name = 2;
+    int32 Price = 3;
+    string Category = 4;
+    int32 Count = 5;
+}
